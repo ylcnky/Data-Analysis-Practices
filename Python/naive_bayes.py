@@ -1,6 +1,4 @@
-# KERNEL SVM
-
-#CLASSIFICATION TEMPLATE
+# NAIVE BAYES
 
 # IMPORTING THE LIBRARIES
 import numpy as np
@@ -26,9 +24,10 @@ X_test = sc_X.transform(X_test)
 
 # FITTING THE the classifier TO THE TRAINING SET
 # Create your classifier here
-from sklearn.svm import SVC
-classifier = SVC(kernel = 'rbf', random_state = 0)
+from sklearn.naive_bayes import GaussianNB
+classifier = GaussianNB()
 classifier.fit(X_train, y_train)
+
 
 # PREDICTING THE TEST SET RESULTS
 y_pred = classifier.predict(X_test)
@@ -50,7 +49,7 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
                 c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('KERNEL SVM (Training set)')
+plt.title('Naive Bayes (Training set)')
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
@@ -68,8 +67,9 @@ plt.ylim(X2.min(), X2.max())
 for i, j in enumerate(np.unique(y_set)):
     plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
                 c = ListedColormap(('red', 'green'))(i), label = j)
-plt.title('KERNEL SVM (Test set)')
+plt.title('Naive Bayes (Test set)')
 plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
-plt.show()
+plt.show()# -*- coding: utf-8 -*-
+
