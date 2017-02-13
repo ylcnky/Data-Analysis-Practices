@@ -20,7 +20,7 @@ stopset = set(stopwords.words('english'))
 # Önceden deneme icin
 postDocs[0]
 
-vectorizer = TfidfVectorizer(stop_words = stopset, use_idf = True, ngram_range = (1, 3))
+vectorizer = TfidfVectorizer(stop_words = stopset, use_idf = True, ngram_range = (1, 2))
 X = vectorizer.fit_transform(postDocs)
 #print (X[0])
 X.shape
