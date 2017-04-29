@@ -8,8 +8,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import TruncatedSVD
 from sklearn.preprocessing import Normalizer
 
-dataset = pd.ExcelFile('SourceFile.xlsx')
+dataset = pd.ExcelFile('SourceFile.csv')
 dataset = dataset.parse('Titled',header=None)
+
+nltk.download()
 
 postTxt = dataset.iloc[:,0]
 postDocs = [x for x in postTxt]
